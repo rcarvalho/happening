@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{happening}
-  s.version = "0.2.5"
+  s.name = %q{rcarvalho-happening}
+  s.version = "0.2.5.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Jonathan Weiss}]
-  s.date = %q{2011-08-23}
+  s.date = %q{2012-07-26}
   s.description = %q{An EventMachine based S3 client }
   s.email = %q{jw@innerewut.de}
   s.extra_rdoc_files = [
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
     "lib/happening/log.rb",
     "lib/happening/s3.rb",
     "lib/happening/s3/item.rb",
+    "lib/happening/s3/bucket.rb"
     "lib/happening/s3/request.rb",
     "lib/happening/utils.rb",
     "test/aws_test.rb",

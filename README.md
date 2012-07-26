@@ -152,6 +152,16 @@ The response data can also be streamed:
 	  end
     end
     
+List Objects in Bucket
+=======================
+  
+    EM.run do
+      bucket = Happening::S3::Bucket.new('bucket', :aws_access_key_id => 'Your-ID', :aws_secret_access_key => 'secret')
+      bucket.get do |response|
+        puts "Response content: #{response.response}"
+      end
+    end
+
 
 SSL Support
 =============

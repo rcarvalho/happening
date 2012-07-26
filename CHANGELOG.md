@@ -1,6 +1,10 @@
 Changelog
 =============
 
+- Ability to get objects in bucket
+
+0.2.5.1
+
 - re-license under Apache 2.0
 
 0.2.5
