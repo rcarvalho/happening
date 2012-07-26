@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
     "lib/happening/log.rb",
     "lib/happening/s3.rb",
     "lib/happening/s3/item.rb",
-    "lib/happening/s3/bucket.rb"
+    "lib/happening/s3/bucket.rb",
     "lib/happening/s3/request.rb",
     "lib/happening/utils.rb",
     "test/aws_test.rb",
