@@ -12,6 +12,7 @@ module Happening
       attr_accessor :bucket, :options
 
       def initialize(bucket, options = {})
+        @marker = options.delete(:marker)
         @options = {
           :timeout => 10,
           :server => 's3.amazonaws.com',
@@ -22,7 +23,7 @@ module Happening
           :permissions => 'private',
           :ssl => Happening::S3.ssl_options
         }.update(symbolize_keys(options))
-        assert_valid_keys(options, :timeout, :server, :protocol, :aws_access_key_id, :aws_secret_access_key, :retry_count, :permissions, :ssl, :marker, :'max-keys')
+        assert_valid_keys(options, :timeout, :server, :protocol, :aws_access_key_id, :aws_secret_access_key, :retry_count, :permissions, :ssl)
         @bucket = bucket.to_s
       
         validate
@@ -36,7 +37,8 @@ module Happening
       end
           
       def url
-        URI::Generic.new(options[:protocol], nil, server, port, nil, path(!dns_bucket?), nil, nil, nil).to_s
+        marker = @marker.nil? ? nil : "marker=#{CGI.escape(@marker)}"
+        URI::Generic.new(options[:protocol], nil, server, port, nil, path(!dns_bucket?), nil, marker, nil).to_s
       end
       
       def server
