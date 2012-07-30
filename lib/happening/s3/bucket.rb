@@ -22,7 +22,7 @@ module Happening
           :permissions => 'private',
           :ssl => Happening::S3.ssl_options
         }.update(symbolize_keys(options))
-        assert_valid_keys(options, :timeout, :server, :protocol, :aws_access_key_id, :aws_secret_access_key, :retry_count, :permissions, :ssl)
+        assert_valid_keys(options, :timeout, :server, :protocol, :aws_access_key_id, :aws_secret_access_key, :retry_count, :permissions, :ssl, :marker, :'max-keys')
         @bucket = bucket.to_s
       
         validate
